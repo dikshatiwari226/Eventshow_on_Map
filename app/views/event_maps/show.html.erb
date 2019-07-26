@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event_map.title %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @event_map.address %>
+</p>
+<p>
+	<strong></strong>
+	<%= @event_map.street %>
+</p>
+<p>
+	<strong></strong>
+	<%= @event_map.street_number %>
+</p>
+<p>
+	<strong></strong>
+	<%= @event_map.postal_code %>
+</p>
+<p>
+	<strong></strong>
+	<%= @event_map.city %>
+</p>
+<p>
+	<strong></strong>
+	<%= @event_map.state %>
+</p>
+<p>
+	<strong></strong>
+	<%= @event_map.country %>
+</p>
+<p>
+	<strong></strong>
+	<%= @event_map.lat %>
+</p>
+<p>
+	<strong></strong>
+	<%= @event_map.lng %>
+</p>
+<p>
+  <strong>Start date:</strong>
+  <%= @event_map.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @event_map.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_event_map_path(@event_map) %> |
+<%= link_to 'Back', event_maps_path %>

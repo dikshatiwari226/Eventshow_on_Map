@@ -1,0 +1,45 @@
+
+<%= simple_form_for(@event_map) do |f| %>
+  <%= hidden_field_tag :lat, nil, id: "lat" ,value: ""%>
+  <%= hidden_field_tag :lng, nil, id: "lng",value: "" %>
+
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :title, id: "title", value: "" %>
+    <%= f.input :address, :label =>"Direction", :input_html => {:id=> 'autocomplete'}, :placeholder => 'Enter address', onFocus = "getlocate()" %>
+    <%= f.input :street, :input_html =>{:id => 'route'}, value: "" %>
+    <%= f.input :street_number,  :input_html =>{:id => 'street_number'}, value: "" %>
+    <%= f.input :postal_code,  :input_html =>{:id => 'postal_code'}, value: "" %>
+    <%= f.input :city,  :input_html =>{:id => 'locality'}, value: "" %>
+    <%= f.input :state,  :input_html =>{:id => 'administrative_area_level_2'}, value: "" %>
+    <%= f.input :country,  :input_html =>{:id => 'country'}, value: "" %>
+
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAvuPSxdugPS2FJQibo-i78wVZHWgmKemk&libraries=places"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
+
+<script type="text/javascript">
+  // $("#autocomplete").geocomplete()
+  //         .bind("geocode:result", function(event, result){
+  //           console.log("Data", result);
+  //           $("#lat").val(result.geometry.viewport.na.j);
+  //           $("#lng").val(result.geometry.viewport.ga.l);
+  //           $("#route").val(result.address_components[0].long_name);
+  //           $("#administrative_area_level_2").val(result.address_components[2].long_name);
+  //           $("#country").val(result.address_components[3].long_name);
+  //         });
+
+  var input = document.getElementById('autocomplete');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+</script>
+
