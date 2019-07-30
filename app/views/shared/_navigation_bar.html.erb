@@ -1,10 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-  <a class="navbar-brand" href="/">Calendar App</a>
+  <div class="container">
+    <div class="row">
+      <a class="navbar-brand" href="/"><span>Calendar App</span> | </a>
+      <a class="navbar-brand" href="/event_maps"><span>Events</span> | </a>
+    </div>
+  </div>
+<!-- <div class="col-sm-3 col-md-6">
+   <%#= link_to 'Events', '/event_maps', class: 'dropdown-item' %>
 
-<div class="col-sm-3 col-md-6">
-   <%= link_to 'Events', '/event_maps', class: 'dropdown-item' %>
-
-</div>
+</div> -->
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-bar-collapse" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

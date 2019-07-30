@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :event_maps
+  resources :event_maps do
+  	collection do
+  		get 'map'
+  	end
+  end
+
   
   resources :routers
   get 'home/index'

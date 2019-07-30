@@ -1,6 +1,6 @@
 class EventMapsController < ApplicationController
   before_action :set_event_map, only: [:show, :edit, :update, :destroy]
-
+    
   # GET /event_maps
   # GET /event_maps.json
   def index
